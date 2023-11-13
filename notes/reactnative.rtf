@@ -1,11 +1,11 @@
 {\rtf1\ansi\ansicpg1252\cocoartf2757
 \cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;\f2\fswiss\fcharset0 Helvetica;
-}
-{\colortbl;\red255\green255\blue255;\red154\green154\blue154;\red11\green12\blue12;\red255\green255\blue255;
-}
-{\*\expandedcolortbl;;\csgray\c66667;\cssrgb\c4706\c5098\c5490;\cssrgb\c100000\c100000\c100000;
-}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\f3\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;\f4\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red154\green154\blue154;\red11\green12\blue12;\red220\green224\blue226;
+\red255\green255\blue255;\red11\green12\blue12;\red220\green224\blue226;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c66667;\cssrgb\c4706\c5098\c5490;\cssrgb\c89020\c90196\c90980;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c4706\c5098\c5490;\cssrgb\c89020\c90196\c90980;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28300\viewh16080\viewkind0
 \deftab560
 \pard\pardeftab560\partightenfactor0
 
@@ -454,7 +454,28 @@ To kill all node processes if npm start does not work\
 \pard\intbl\itap1\pardeftab560\slleading20\pardirnatural\partightenfactor0
 \cf0 killall -9 node\cell \lastrow\row
 \pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 If this didn\'92t work then\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3 \cf3 \cb4 \expnd0\expndtw0\kerning0
+pkill nodejs
+\f1 \cf0 \cb1 \kerning1\expnd0\expndtw0 \cell \lastrow\row
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 Or\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf2 \clbrdrl\brdrs\brdrw20\brdrcf2 \clbrdrb\brdrs\brdrw20\brdrcf2 \clbrdrr\brdrs\brdrw20\brdrcf2 \clpadt20 \clpadl100 \clpadb20 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3 \cf3 \cb4 \expnd0\expndtw0\kerning0
+pkill node
+\f1 \cf0 \cb1 \kerning1\expnd0\expndtw0 \cell \lastrow\row
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
 \cf0 \
+\
 \pard\pardeftab560\slleading20\partightenfactor0
 \cf0 If you get this Error: Could not find or load main class org.gradle.wrapper.GradleWrapperMain\
 \
@@ -583,18 +604,51 @@ cd android && ./gradlew clean && ./gradlew assembleRelease\
 https://stackoverflow.com/questions/72451781/cant-use-watchman-operation-not-permitted \
 \pard\pardeftab720\sa330\partightenfactor0
 
-\fs30 \cf3 \cb4 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 If the server and client versions don't match up, you should probably restart your server:\'a0watchman shutdown-server ; watchman\
+\fs30 \cf3 \cb5 \expnd0\expndtw0\kerning0
+If the server and client versions don't match up, you should probably restart your server:\'a0watchman shutdown-server ; watchman\
 \pard\pardeftab720\partightenfactor0
 {\field{\*\fldinst{HYPERLINK "https://facebook.github.io/watchman/docs/cmd/version.html"}}{\fldrslt \cf3 \ul \ulc3 https://facebook.github.io/watchman/docs/cmd/version.html}}\
 \pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
 
-\fs26 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\fs26 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
 \
 \
-General problem resolution:\
+General problem resolution 1:\
 \pard\pardeftab720\partightenfactor0
 \cf0 delete \'93node_modules\'94 and the \'93package-lock.json\'94 file then \'93npm install\'94\
+\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 General problem resolution 2: Do this in order\
+1. Delete npm_modules folder\
+2. Delete package-lock.json\
+3. Delete android and iOS build folders\
+4. Install node dependencies- sudo npm install\
+5. Grant all folder permissions - sudo chown -R username directory_name\
+6. Don\'92t do - sudo pod install. It won\'92t work anyway\
+7. Navigate to iOS folder and do this to install iOS dependencies - pod install\
+\
+\
+\
+Grant permission to watchman \
+https://stackoverflow.com/questions/72451781/cant-use-watchman-operation-not-permitted \
+1. Go to Mac settings\
+2. Privacy and security\
+3. Files and Folders\
+4. Watchman\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\
+Install CocoaPods\
+1. 
+\f3 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 brew install ruby
+\f1 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+1. 
+\f4\fs22 \cf8 \CocoaLigature0 gem update --system\
+2. sudo gem install cocoapods
+\f1\fs26 \cf0 \CocoaLigature1 \
+\
 \pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
 \cf0 \
 \

@@ -1,0 +1,29 @@
+{
+	// import React from 'react';
+	// import {
+	//     SafeAreaView,
+	//     StatusBar,
+	//     StyleSheet,
+	//     View,
+	// } from 'react-native';
+
+	// function $TM_FILENAME_BASE(): JSX.Element {
+	//   return (
+	//   	<SafeAreaView style={styles.container}>
+	//   		<StatusBar
+	// 			  barStyle={'dark-content'}
+	// 			  backgroundColor={"#ffffff"}
+	//   		/>
+	//   		<View></View>
+	// 	</SafeAreaView>
+	//   );
+	// }
+
+	// const styles = StyleSheet.create({
+	//     container: {
+	//         flex: 1
+	//     },
+	// });
+
+	// export default $TM_FILENAME_BASE;
+}
