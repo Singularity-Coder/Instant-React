@@ -10,7 +10,6 @@ import { showToast } from '../helpers/components/CustomToast';
 import LinearGradient from "react-native-linear-gradient";
 import Spacer from '../helpers/components/Spacer';
 import { CustomStatusBar } from '../helpers/components/CustomStatusBar';
-import { SvgXml } from 'react-native-svg';
 import FaceSvg from '../assets/images/ic_face.svg';
 
 // https://blog.logrocket.com/create-style-custom-buttons-react-native/
@@ -65,7 +64,7 @@ const VectorIconButton = ({ onPress, icon, title, backgroundColor }) => (
         <View style={[styles.iconButtonContainer, { backgroundColor: backgroundColor }]}>
             {/* <Image source={require("../assets/images/ic_face.svg")} style={{ width: 24, height: 24 }} /> */}
             <FaceSvg width="30" height="30" fill={"white"} />
-            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 18, marginStart: 12}}>{title}</Text>
+            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 18, marginStart: 12 }}>{title}</Text>
         </View >
     </TouchableOpacity>
 );
@@ -104,7 +103,7 @@ function CustomButtons(): JSX.Element {
             <Spacer />
             <GradientButton2 onPress={() => showToast("Hello")} title={"Gradient Button 2"} />
             <Spacer />
-            <VectorIconButton onPress={() => showToast("Hello")} icon="github" title="Login with GitHub" backgroundColor="crimson" />
+            {/* <VectorIconButton onPress={() => showToast("Hello")} icon="github" title="Login with GitHub" backgroundColor="crimson" /> */}
             <Spacer />
             <StatefulButton title={"Stateful Button"} />
         </SafeAreaView>

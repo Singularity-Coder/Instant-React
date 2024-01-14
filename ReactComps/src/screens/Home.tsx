@@ -7,14 +7,12 @@ import {
     Text, View, Button
 } from 'react-native';
 import { ButtonStrings, ScreenNames } from '../helpers/constants/Constants';
+import { CustomStatusBar } from '../helpers/components/CustomStatusBar';
 
 function Home({ navigation }): JSX.Element {
     return (
         <SafeAreaView style={styles.container}>
-            <StatusBar
-                barStyle={'dark-content'}
-                backgroundColor={"#ffffff"}
-            />
+            <CustomStatusBar />
             <ScrollView contentInsetAdjustmentBehavior="automatic">
                 <Text style={{ fontSize: 42, color: "#000000" }}>
                     Hello <Text style={{ fontWeight: '700' }}>React</Text>
@@ -33,6 +31,14 @@ function Home({ navigation }): JSX.Element {
                         title={ButtonStrings.buttons}
                         color="#000000"
                         accessibilityLabel={ButtonStrings.buttons}
+                    />
+                </View>
+                <View style={styles.button}>
+                    <Button
+                        onPress={() => navigation.navigate(ScreenNames.customLists)}
+                        title={ButtonStrings.customLists}
+                        color="#000000"
+                        accessibilityLabel={ButtonStrings.customLists}
                     />
                 </View>
             </ScrollView>
